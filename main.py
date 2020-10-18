@@ -19,14 +19,14 @@ def main():
     # Locals
     programRunning = False
     playerOne = Player('Player One', notifyExtraHands)
+    players = [playerOne]
 
     if twoPlayerMode:
         playerTwo = Player('Player Two', notifyExtraHands)
         playerOne, playerTwo = configMultiplayer.configTwoPlayer(playerOne, playerTwo)
-        players = [playerOne, playerTwo]
+        players.append(playerTwo)
         print('Running in two player mode!')
     else:
-        players = [playerOne]
         print('Running in single player mode!')
 
     print('Move mouse to top of screen to begin')
